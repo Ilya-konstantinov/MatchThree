@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Grid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Sprites/background/1_1/1.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Abilities.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/Sprites/background/1_1/2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Sprites/planks/pixil-frame-0_71-_1_.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Sprites/background/other/pixil-frame-0_70.png" type="Texture" id=7]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Фон1" type="Sprite" parent="."]
+position = Vector2( 330, 545 )
+scale = Vector2( 4.2987, 2.54079 )
+texture = ExtResource( 3 )
+
+[node name="Фон2" type="Sprite" parent="."]
+position = Vector2( 1151.5, 542.5 )
+scale = Vector2( 4.17532, 2.5338 )
+texture = ExtResource( 5 )
+
+[node name="todel_enemy" type="ColorRect" parent="."]
+margin_left = 332.0
+margin_right = 1147.0
+margin_bottom = 402.0
+color = Color( 0.858824, 0.239216, 0.239216, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="todel_enemy"]
+
+[node name="todel_health" type="ColorRect" parent="."]
+margin_left = 1471.0
+margin_top = 622.0
+margin_right = 1919.0
+margin_bottom = 805.0
+color = Color( 0.313726, 0.243137, 0.933333, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="todel_health"]
+
+[node name="Cпособности" type="VBoxContainer" parent="."]
+margin_left = 1474.0
+margin_top = 3.0
+margin_right = 1911.0
+margin_bottom = 613.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="Abilities" parent="Cпособности" instance=ExtResource( 4 )]
+margin_top = 259.0
+margin_right = 437.0
+margin_bottom = 279.0
+
+[node name="Abilities2" parent="Cпособности" instance=ExtResource( 4 )]
+margin_top = 283.0
+margin_right = 437.0
+margin_bottom = 303.0
+
+[node name="Abilities3" parent="Cпособности" instance=ExtResource( 4 )]
+margin_top = 307.0
+margin_right = 437.0
+margin_bottom = 327.0
+
+[node name="Abilities4" parent="Cпособности" instance=ExtResource( 4 )]
+margin_top = 331.0
+margin_right = 437.0
+margin_bottom = 351.0
+
+[node name="Grid" parent="." instance=ExtResource( 2 )]
+position = Vector2( 336, 402 )
+height = 7
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1696.38, 312.875 )
+scale = Vector2( 2.26625, 2.23482 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 1697.5, 942 )
+scale = Vector2( 2.235, 2.06154 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 742, 745 )
+scale = Vector2( 4.035, 2.40714 )
+z_index = -1
+texture = ExtResource( 6 )

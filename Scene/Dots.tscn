@@ -1,0 +1,76 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Scripts/Dot.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Sprites/shield/Shield3.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Sprites/shield/Shield5.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Sprites/heart/pixil-frame-0_58.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Sprites/heart/pixil-frame-0_59.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Sprites/heart/pixil-frame-0_60.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Sprites/heart/pixil-frame-0_61.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Sprites/star/pixil-frame-0_4.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Sprites/skull/pixil-frame-0_48.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Sprites/skull/pixil-frame-0_49.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Sprites/shield/Shiled4.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Sprites/skull/pixil-frame-0_50.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Sprites/star/pixil-frame-0_16.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Sprites/skull/pixil-frame-0_47.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Sprites/shield/Shield2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Sprites/star/pixil-frame-0_3.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Sprites/shield/Shield1.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Sprites/skull/pixil-frame-0_51.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Sprites/skull/pixil-frame-0_52.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Sprites/coin/pixil-frame-0_65.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Sprites/coin/pixil-frame-0_67.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Sprites/coin/pixil-frame-0_39 (1).png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Sprites/coin/pixil-frame-0_39.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Sprites/coin/pixil-frame-0_65 (1).png" type="Texture" id=25]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Coin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Heart",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 16 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Shield",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "Skull",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 9 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Star",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Dots" type="Button"]
+margin_right = 100.0
+margin_bottom = 100.0
+flat = true
+script = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 49, 50 )
+frames = SubResource( 1 )
+animation = "Coin"
+frame = 2
+playing = true
+
+[connection signal="button_down" from="." to="." method="_on_Dots_button_down"]
